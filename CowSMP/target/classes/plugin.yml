@@ -1,0 +1,21 @@
+name: CowSMP
+version: 1.0
+main: me.steakfisher.cowsmp.CowSMP
+api-version: 1.17
+authors: [ steakfisher ]
+description: Lets you tp to the beds of offline players
+permissions:
+  cowsmp.group1:
+    description: Group one of Cow SMP
+  cowsmp.group2:
+    description: Group two of Cow SMP
+  cowsmp.group3:
+    description: Group three of Cow SMP
+  cowsmp.group4:
+    description: Group four of Cow SMP
+  cowsmp.group5:
+    description: Group five of Cow SMP
+  cowsmp.mod:
+    description: Mod Team of Cow SMP
+  cowsmp.content:
+    description: Content Creators on the Cow SMP

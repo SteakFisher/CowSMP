@@ -1,0 +1,4 @@
+me\steakfisher\cowsmp\listeners\onJoinEvent.class
+me\steakfisher\cowsmp\listeners\onRespawnEvent.class
+me\steakfisher\cowsmp\CowSMP.class
+me\steakfisher\cowsmp\listeners\onDeathEvent.class
