@@ -12,7 +12,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 
@@ -22,6 +21,7 @@ public class onJoinEvent implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
+        String playerString = String.valueOf(player);
 
         if(player.hasPlayedBefore()) {
             if(player.isOp()){
@@ -59,6 +59,9 @@ public class onJoinEvent implements Listener {
                         player.teleport(new Location(player.getWorld(), -1500000, 71, -1500000));
                     }
                 if (a % 2 == 1) {
+                    ArrayList<String> list = (ArrayList<String>) plugin.getConfig().getStringList("config.Four");
+                    list.add(playerString);
+                    plugin.getConfig().set("config.Four", list);
                     UUID uuidFour = player.getUniqueId();
                     ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
                     String command = "lp user " + uuidFour + " parent add four";
@@ -67,6 +70,8 @@ public class onJoinEvent implements Listener {
                     a++;
                 } else if (a % 2 == 0) {
                     UUID uuidFive = player.getUniqueId();
+                    ArrayList<String> list = (ArrayList<String>) plugin.getConfig().getStringList("config.Four");
+                    list.add(playerString);
                     ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
                     String command = "lp user " + uuidFive + " parent add five";
                     Bukkit.dispatchCommand(console, command);
@@ -74,6 +79,7 @@ public class onJoinEvent implements Listener {
                     a++;
                 }
             }
+            plugin.saveConfig();
             }
         }
     }
