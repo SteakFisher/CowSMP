@@ -1,8 +1,15 @@
 config:
   One:
+  - "Apple"
   - "SteakFisher"
   Two:
+  - "Test"
   Three:
+  - "Test"
+  Four:
+  - "Test"
+  Five:
+  - "Test"
   Staff:
   - "Logi_Bear11"
   - "Kisuke_Urahara_"

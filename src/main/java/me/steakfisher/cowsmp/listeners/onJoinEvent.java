@@ -11,6 +11,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -21,21 +23,25 @@ public class onJoinEvent implements Listener {
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
 
-        if(!player.hasPlayedBefore()) {
+        if(player.hasPlayedBefore()) {
             if(player.isOp()){
                 player.teleport(new Location(player.getWorld(), 2500000, 65, 2500000));
                 }
             else{
-                for(String One : plugin.getConfig().getStringList("config.one")){
-                    Player playerName1 = Bukkit.getServer().getPlayer(String.valueOf(One));
+                player.sendMessage("Works till here");
+                for(String One : plugin.getConfig().getStringList("config.One")){
+                    Player playerName1 = Bukkit.getServer().getPlayer(One);
+                    player.sendMessage("Works till here");
                     if(player == playerName1){
+                        player.sendMessage("You're in grp 1");
                         ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
                         String command = "lp user " + One + " parent add one";
                         Bukkit.dispatchCommand(console, command);
                         player.teleport(new Location(player.getWorld(), 1500000, 71, 1500000));
                     }
                 }
-                for(String Two : plugin.getConfig().getStringList("config.two")){
+                player.sendMessage("Works till here");
+                for(String Two : plugin.getConfig().getStringList("config.Two")){
                     Player playerName1 = Bukkit.getServer().getPlayer(String.valueOf(Two));
                     if(player == playerName1){
                         ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
@@ -44,7 +50,7 @@ public class onJoinEvent implements Listener {
                         player.teleport(new Location(player.getWorld(), -1500000, 71, 1500000));
                     }
                 }
-                for(String Three : plugin.getConfig().getStringList("config.three")){
+                for(String Three : plugin.getConfig().getStringList("config.Three")){
                     Player playerName1 = Bukkit.getServer().getPlayer(String.valueOf(Three));
                     if(player == playerName1){
                         ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
