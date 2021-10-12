@@ -28,10 +28,8 @@ public class onJoinEvent implements Listener {
                 player.teleport(new Location(player.getWorld(), 2500000, 65, 2500000));
                 }
             else{
-                player.sendMessage("Works till here");
                 for(String One : plugin.getConfig().getStringList("config.One")){
                     Player playerName1 = Bukkit.getServer().getPlayer(One);
-                    player.sendMessage("Works till here");
                     if(player == playerName1){
                         player.sendMessage("You're in grp 1");
                         ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
